@@ -1,9 +1,13 @@
 <?php
     function checkIfOverdue($dueDate, $returnDate){
+        $dueDate = strtotime($dueDate);
+        $returnDate = strtotime($returnDate);
         if($dueDate > $returnDate){
-            return "Returned on time.";
+            $untilDue = $dueDate - $returnDate;
+            return "Returned on time. Time until due: " . date("d", $untilDue);
         } if ($dueDate < $returnDate) {
-            return "Returned late.";
+            $overdue = $returnDate - $dueDate;
+            return "Returned late. Time overdue: $overdue";
         } else {
             return "The due date is today.";
         }
