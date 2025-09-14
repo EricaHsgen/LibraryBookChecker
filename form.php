@@ -1,5 +1,3 @@
-
-
 <form>
   <div class="mb-3">
     <label for="dueDate" class="form-label">Due Date</label>

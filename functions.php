@@ -4,10 +4,10 @@
         $returnDate = strtotime($returnDate);
         if($dueDate > $returnDate){
             $untilDue = $dueDate - $returnDate;
-            return "Returned on time. Time until due: " . date("d", $untilDue);
+            return "Returned on time. Time until due: " . date("j", $untilDue)  . " day(s).";
         } if ($dueDate < $returnDate) {
             $overdue = $returnDate - $dueDate;
-            return "Returned late. Time overdue: $overdue";
+            return "Returned late. Time overdue: " . date("j", $overdue) . " day(s).";
         } else {
             return "The due date is today.";
         }
